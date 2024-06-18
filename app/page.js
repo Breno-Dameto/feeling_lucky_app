@@ -103,7 +103,7 @@ return (
         <Navbar.Brand href="#home">
         <img
         priority
-        src="/Icon.svg"
+        src="./Icon.svg"
         alt="Logo"
       />
     </Navbar.Brand>
@@ -119,10 +119,11 @@ return (
 
     <div className="d-flex flex-column justify-content-center align-items-start flex-grow-1 ml-28">
     <img
-      src="/FEELING LUCKY_.svg"
+      src="./FEELING LUCKY_.svg"
       width={250}
       height={250}
       alt="Logo"
+      priority
     />
     <p className="mt-2">CLICK AND <strong>DISCOVER YOUR
     NEW <br/>FAVORITE BRAZILLIAN SONG HERE!!</strong></p>

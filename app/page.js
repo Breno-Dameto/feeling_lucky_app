@@ -101,7 +101,7 @@ return (
       <Navbar className="w-100 p-3">
       <Container className=''>
         <Navbar.Brand href="#home">
-        <img
+        <Image
         priority
         src="./Icon.svg"
         alt="Logo"
@@ -118,7 +118,7 @@ return (
       </Navbar>
 
     <div className="d-flex flex-column justify-content-center align-items-start flex-grow-1 ml-28">
-    <img
+    <Image
       src="./FEELING LUCKY_.svg"
       width={250}
       height={250}

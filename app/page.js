@@ -61,7 +61,7 @@ async function getProfile() {
       return;
     }
     try {
-      const fetchSongResponse = await fetch(`api/fetchRandomSong?genre=${genre}`, {
+      const fetchSongResponse = await fetch(`/api/fetchRandomSong?genre=${genre}`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }

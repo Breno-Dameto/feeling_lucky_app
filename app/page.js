@@ -5,18 +5,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import SongModal from './SongModal'
 import GenreModal from './GenreModal';
 const CLIENT_ID =  "dfda54de042a4ae7a7e9e4a784fa2876";
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
 const REDIRECT_URL_AFTER_LOGIN = 'https://feeling-lucky-app.vercel.app/'
 const SPACE_DELIMITER = "%20";
-const SCOPES = ["user-library-modify", "playlist-modify-public", "playlist-modify-private", "user-read-private"];
+const SCOPES = ["user-library-modify", "playlist-modify-public", "playlist-modify-private"];
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 const playlistId = '0ZONf5IIceSP9ZyHU35CcvS'
-const RESPONSE_TYPE = "code";
-const REDIRECT_URI = "https://feeling-lucky-app.vercel.app/callback"
 
 
 const Home = () => {
@@ -26,31 +23,9 @@ const Home = () => {
   const [showGenreModal, setShowGenreModal] = useState(false);
   const [genre, setGenre] = useState('');
 
-
-    //window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
-    const handleLogin = async () => {
-      const authorizationUrl = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${encodeURIComponent(SCOPES.join(' '))}&response_type=${RESPONSE_TYPE}`;
-      window.location.href = authorizationUrl;
-    };
-
-    useEffect(() => {
-      // Verifica se há um código de autorização na URL após o redirecionamento do Spotify
-      const fetchAccessToken = async () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const code = urlParams.get('code');
-  
-        if (code) {
-          try {
-            const { data } = await axios.post('/api/spotify/callback', { code });
-            setAccessToken(data.access_token);
-          } catch (error) {
-            console.error('Erro ao obter o token de acesso do Spotify:', error.message);
-          }
-        }
-      };
-  
-      fetchAccessToken();
-    }, []);
+  const handleLogin = () => {
+    window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
+  }
 
   useEffect(() => {
     const hash = window.location.hash;

@@ -9,7 +9,7 @@ import SongModal from './SongModal'
 import GenreModal from './GenreModal';
 const CLIENT_ID =  "dfda54de042a4ae7a7e9e4a784fa2876";
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
-const REDIRECT_URL_AFTER_LOGIN = 'https://breno-dameto.github.io/feeling_lucky_app/'
+const REDIRECT_URL_AFTER_LOGIN = 'https://feeling-lucky-app.vercel.app/'
 const SPACE_DELIMITER = "%20";
 const SCOPES = ["user-library-modify", "playlist-modify-public", "playlist-modify-private"];
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);

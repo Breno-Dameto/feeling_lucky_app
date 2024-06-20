@@ -19,7 +19,12 @@ const SongModal = ({ show, handleClose, track, songUrl }) => {
         <Modal.Title>{track.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Image src={track.album.images[0].url} alt={track.name} style={{ width: '100%' }} />
+        <Image 
+        priority
+        src={track.album.images[0].url} 
+        alt={track.name} 
+        style={{ width: '100%' }} 
+        />
         <p>Artista: {track.artists[0].name}</p>
       </Modal.Body>
       <Modal.Footer>

@@ -16,7 +16,7 @@ const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 const playlistId = '0ZONf5IIceSP9ZyHU35CcvS'
 
 
-export default function Home() {
+const Home = () => {
   const [accessToken, setAccessToken] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(null);
@@ -128,7 +128,7 @@ return (
     />
     <p className="mt-2">CLICK AND <strong>DISCOVER YOUR
     NEW <br/>FAVORITE BRAZILLIAN SONG HERE!!</strong></p>
-    <Button onClick={handleLetsGoClick} variant="dark" size="sm" className="btn btn-primary mt-3 w-48 h-12 rounded-pill">LET'S GO!!!</Button>
+    <Button onClick={handleLetsGoClick} variant="dark" size="sm" className="btn btn-primary mt-3 w-48 h-12 rounded-pill">LETS GO!!!</Button>
     <GenreModal
         show={showGenreModal}
         handleClose={() => setShowGenreModal(false)}
@@ -141,4 +141,6 @@ return (
   <SongModal show={showModal} handleClose={() => setShowModal(false)} track={currentTrack} songUrl={currentTrack?.external_urls?.spotify} />
     </main>
   );
-}
+};
+
+export default Home;

@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const CLIENT_ID = "dfda54de042a4ae7a7e9e4a784fa2876";
 const CLIENT_SECRET = "2d7c17b01f0147f19c98247b7cde3a0f"; // Armazene de forma segura, de preferência em variáveis de ambiente
+const REDIRECT_URI = 'https://feeling-lucky-app.vercel.app/'
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {

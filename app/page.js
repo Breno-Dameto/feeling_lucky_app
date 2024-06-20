@@ -16,6 +16,7 @@ const SCOPES = ["user-library-modify", "playlist-modify-public", "playlist-modif
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 const playlistId = '0ZONf5IIceSP9ZyHU35CcvS'
 const RESPONSE_TYPE = "code";
+const REDIRECT_URI = "https://feeling-lucky-app.vercel.app/callback"
 
 
 const Home = () => {

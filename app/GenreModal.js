@@ -14,7 +14,6 @@ const handleSearchClick = () => {
         setGenre(selectedGenre); // Define o gênero selecionado no estado do componente pai
         addRandomSongToPlaylist(); // Chama a função para adicionar a música à playlist
         handleClose(); // Fecha o modal
-        console.log(selectedGenre)
       };
 
     return (

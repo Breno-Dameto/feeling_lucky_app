@@ -20,7 +20,7 @@ const SongModal = ({ show, handleClose, track, songUrl }) => {
       </Modal.Header>
       <Modal.Body>
         <Image 
-        priority
+        unoptimized
         src={track.album.images[0].url} 
         alt={track.name} 
         style={{ width: '100%' }} 

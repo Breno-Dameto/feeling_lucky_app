@@ -1,5 +1,6 @@
 "use client"
 import Container from 'react-bootstrap/Container';
+import Image from 'next/image';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';

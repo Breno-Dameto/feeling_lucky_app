@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import Image from 'next/image';
 
 const SongModal = ({ show, handleClose, track, songUrl }) => {
   // Verifique se 'track' e 'track.album.images[0]' existem antes de tentar acessar 'track.name'

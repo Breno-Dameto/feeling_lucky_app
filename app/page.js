@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import SongModal from './SongModal'
 import GenreModal from './GenreModal';
 const CLIENT_ID =  "dfda54de042a4ae7a7e9e4a784fa2876";
@@ -23,9 +24,18 @@ const Home = () => {
   const [showGenreModal, setShowGenreModal] = useState(false);
   const [genre, setGenre] = useState('');
 
-  const handleLogin = () => {
-    window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
-  }
+
+    //window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
+    const handleLogin = async () => {
+      try {
+        const { data } = await axios.post('/api/spotify', { code: 'code_from_spotify' }); // Replace 'code_from_spotify' with actual code received from Spotify
+        setAccessToken(data.access_token);
+        // Optionally, you can redirect or update state based on successful login
+      } catch (error) {
+        console.error('Error logging in with Spotify:', error.message);
+        // Handle error, show message, etc.
+      }
+    };
 
   useEffect(() => {
     const hash = window.location.hash;
